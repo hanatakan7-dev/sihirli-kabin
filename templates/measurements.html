@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>AI Body Analysis</title>
+
+    <style>
+
+        body{
+
+            margin:0;
+            background:#f5f5f5;
+            font-family:Arial;
+            padding:50px;
+        }
+
+        .card{
+
+            width:500px;
+            margin:auto;
+            background:#fff;
+            border-radius:30px;
+            padding:40px;
+            box-shadow:0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        h1{
+
+            color:#111;
+            margin-bottom:30px;
+        }
+
+        .item{
+
+            margin-bottom:20px;
+            padding:20px;
+            background:#fafafa;
+            border-radius:20px;
+        }
+
+        .label{
+
+            color:#666;
+            margin-bottom:8px;
+        }
+
+        .value{
+
+            font-size:28px;
+            font-weight:bold;
+            color:#7B2CBF;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>AI Vücut Analizi</h1>
+
+    <div class="item">
+
+        <div class="label">
+            Omuz Genişliği
+        </div>
+
+        <div class="value">
+            {{ data.shoulder_width }} px
+        </div>
+
+    </div>
+
+    <div class="item">
+
+        <div class="label">
+            Gövde Yüksekliği
+        </div>
+
+        <div class="value">
+            {{ data.body_height }} px
+        </div>
+
+    </div>
+
+    <div class="item">
+
+        <div class="label">
+            Bel Genişliği
+        </div>
+
+        <div class="value">
+            {{ data.waist_width }} px
+        </div>
+
+    </div>
+
+    <div class="item">
+
+        <div class="label">
+            Tahmini Beden
+        </div>
+
+        <div class="value">
+            {{ data.size }}
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

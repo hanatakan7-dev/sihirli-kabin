@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sepet</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <header>
+        <div class="logo">🛒 Sepet</div>
+        <a href="/" class="btn">Ana Sayfa</a>
+    </header>
+
+    <div class="container">
+
+        {% if items %}
+
+            {% for item in items %}
+                <div class="card">
+
+                    <h3>{{ item.name }}</h3>
+
+                    <p>{{ item.quantity }} adet</p>
+
+                    <p class="price">{{ item.subtotal }} TL</p>
+
+                    <div>
+                        <a class="btn" href="/increase/{{ item.id }}">+</a>
+                        <a class="btn" href="/decrease/{{ item.id }}">-</a>
+                        <a class="btn" href="/remove/{{ item.id }}">Sil</a>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+            <!-- TOPLAM -->
+            <h2>Toplam: {{ total }} TL</h2>
+
+            <!-- CHECKOUT -->
+            <a class="btn" href="/checkout">
+                Siparişi Tamamla
+            </a>
+
+            <!-- TEMİZLE -->
+            <br><br>
+            <a class="btn" href="/clear">Sepeti Temizle</a>
+
+        {% else %}
+
+            <p>Sepet boş</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Analiz</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#0f0f0f;
+    color:white;
+    font-family:Arial;
+    overflow:hidden;
+}
+
+.container{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.logo{
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+.logo span{
+
+    color:#9d4edd;
+}
+
+.subtitle{
+
+    color:#aaa;
+
+    margin-bottom:50px;
+
+    font-size:18px;
+}
+
+.loader{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:8px solid rgba(255,255,255,0.1);
+
+    border-top:8px solid #9d4edd;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:40px;
+}
+
+@keyframes spin{
+
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.status{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+    color:#fff;
+}
+
+.ai-box{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    width:500px;
+
+    max-width:90%;
+}
+
+.ai-item{
+
+    margin-bottom:18px;
+
+    color:#ccc;
+}
+
+.glow{
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    background:#7b2cbf;
+
+    filter:blur(150px);
+
+    opacity:0.2;
+
+    z-index:-1;
+}
+
+</style>
+
+<script>
+
+setTimeout(function(){
+
+    window.location.href="/measurements"
+
+}, 6000)
+
+</script>
+
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="container">
+
+    <div class="logo">
+        Sihirli <span>Kabin</span>
+    </div>
+
+    <div class="subtitle">
+        AI destekli vücut analizi yapılıyor
+    </div>
+
+    <div class="loader"></div>
+
+    <div class="status">
+        AI Vücut Analizi Sürüyor...
+    </div>
+
+    <div class="ai-box">
+
+        <div class="ai-item">
+            ✓ Vücut oranları hesaplanıyor
+        </div>
+
+        <div class="ai-item">
+            ✓ Omuz genişliği analiz ediliyor
+        </div>
+
+        <div class="ai-item">
+            ✓ Kıyafet uyumu belirleniyor
+        </div>
+
+        <div class="ai-item">
+            ✓ Sanal kabin modeli hazırlanıyor
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

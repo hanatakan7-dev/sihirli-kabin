@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app">
+    <div class="container">
+
+        <h2>👤 Profil</h2>
+
+        <p><b>Kullanıcı:</b> {{ user }}</p>
+
+        <h3>📦 Siparişlerim</h3>
+
+        {% if orders %}
+            {% for o in orders %}
+                <div class="card">
+                    Sipariş #{{ o[0] }} <br>
+                    Toplam: {{ o[1] }} TL
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Henüz sipariş yok</p>
+        {% endif %}
+
+        <br>
+        <a class="btn" href="/logout">Çıkış Yap</a>
+
+    </div>
+</div>
+
+</body>
+</html>

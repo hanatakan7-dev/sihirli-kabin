@@ -1,0 +1,306 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sihirli Kabin</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="mobile-app">
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div class="menu-btn">
+            ☰
+        </div>
+
+        <div class="logo-area">
+            <h1>Sihirli Kabin</h1>
+            <span>AI Fashion Experience</span>
+        </div>
+
+        <div class="header-icons">
+            <button>🔔</button>
+            <button>♡</button>
+        </div>
+
+    </header>
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input type="text" placeholder="Ürün, kategori veya marka ara...">
+
+            <button>⚙</button>
+
+        </div>
+
+    </section>
+
+    <!-- HERO -->
+
+    <section class="hero-banner">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                PREMIUM AI
+            </div>
+
+            <h2>
+                Tarzını <br>
+                Keşfet ✨
+            </h2>
+
+            <p>
+                Yapay zeka destekli sanal deneme deneyimi
+            </p>
+
+            <button class="hero-btn">
+                Kabinimde Dene ✨
+            </button>
+
+        </div>
+
+        <div class="hero-glow"></div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+        <div class="section-header">
+            <h3>Kategoriler</h3>
+        </div>
+
+        <div class="category-scroll">
+
+            <div class="category-item">
+                <div class="category-icon">👗</div>
+                <span>Elbise</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-icon">🧥</div>
+                <span>Üst Giyim</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-icon">👖</div>
+                <span>Alt Giyim</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-icon">👠</div>
+                <span>Ayakkabı</span>
+            </div>
+
+            <div class="category-item">
+                <div class="category-icon">👜</div>
+                <span>Çanta</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TREND PRODUCTS -->
+
+    <section class="products">
+
+        <div class="section-header">
+
+            <h3>Trend Ürünler</h3>
+
+            <a href="#">Tümünü Gör</a>
+
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT -->
+
+            <div class="product-card">
+
+                <div class="product-image purple"></div>
+
+                <button class="fav-btn">
+                    ♡
+                </button>
+
+                <div class="product-info">
+
+                    <h4>Saten Midi Elbise</h4>
+
+                    <p>Premium Collection</p>
+
+                    <div class="product-bottom">
+
+                        <span>₺1299</span>
+
+                        <button>+</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT -->
+
+            <div class="product-card">
+
+                <div class="product-image black"></div>
+
+                <button class="fav-btn">
+                    ♡
+                </button>
+
+                <div class="product-info">
+
+                    <h4>Oversize Blazer</h4>
+
+                    <p>Luxury Edition</p>
+
+                    <div class="product-bottom">
+
+                        <span>₺1899</span>
+
+                        <button>+</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AI BANNER -->
+
+    <section class="ai-banner">
+
+        <div class="ai-content">
+
+            <h3>VIP Ayna Modu ✨</h3>
+
+            <p>
+                Gerçek zamanlı sanal deneme sistemi
+            </p>
+
+            <button>
+                Şimdi Başla
+            </button>
+
+        </div>
+
+    </section>
+    <!-- AI TRY ON SCREEN -->
+
+<section class="tryon-screen">
+
+    <div class="tryon-header">
+        <h2>AI Virtual Try-On</h2>
+        <span>Powered by Sihirli AI ✨</span>
+    </div>
+
+    <div class="camera-frame">
+
+        <div class="scan-line"></div>
+
+        <div class="camera-overlay"></div>
+
+        <div class="ai-badge">
+            AI ACTIVE
+        </div>
+
+      <div class="camera-content">
+
+    <div class="avatar-glow"></div>
+
+    <!-- MODEL -->
+
+    <img 
+        src="/static/images/model.png" 
+        class="model-image"
+    >
+
+    <!-- CLOTH -->
+
+    <img 
+        src="/static/cloths/tshirt.png" 
+        class="cloth-overlay"
+    >
+
+</div>  
+
+    </div>
+
+    <div class="tryon-actions">
+
+        <button class="upload-btn">
+            Upload Photo
+        </button>
+
+        <button class="capture-btn">
+            ✨ Try Now
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- BOTTOM NAV -->
+
+    <nav class="bottom-nav">
+
+        <button class="nav-item active">
+            <span>🏠</span>
+            <small>Ana Sayfa</small>
+        </button>
+
+        <button class="nav-item">
+            <span>✨</span>
+            <small>Sihirli Kabin</small>
+        </button>
+
+        <button class="nav-item">
+            <span>🛒</span>
+            <small>Sepet</small>
+        </button>
+
+        <button class="nav-item">
+            <span>♡</span>
+            <small>Favoriler</small>
+        </button>
+
+        <button class="nav-item">
+            <span>👤</span>
+            <small>Profil</small>
+        </button>
+
+    </nav>
+
+</div>
+
+</body>
+</html>

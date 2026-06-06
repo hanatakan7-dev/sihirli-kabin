@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app">
+    <div class="container">
+
+        <div class="admin-header">
+            ⚡ Sihirli Kabin Admin
+        </div>
+
+        <!-- ÜRÜN EKLE -->
+        <div class="admin-section">
+
+            <h3>Yeni Ürün Ekle</h3>
+
+            <form
+                method="POST"
+                action="/add-product"
+                enctype="multipart/form-data"
+                class="admin-form"
+            >
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Ürün adı"
+                    required
+                >
+
+                <input
+                    type="number"
+                    name="price"
+                    placeholder="Fiyat"
+                    required
+                >
+
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    required
+                >
+
+                <button class="btn">
+                    Ürünü Ekle
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- ÜRÜNLER -->
+        <div class="admin-section">
+
+            <h3>Ürünler</h3>
+
+            {% for p in products %}
+
+                <div class="admin-card">
+
+                    <div>
+
+                        <img
+                            src="/static/uploads/{{ p['image'] }}"
+                            style="
+                                width:60px;
+                                height:60px;
+                                object-fit:cover;
+                                border-radius:10px;
+                                margin-bottom:8px;
+                            "
+                        >
+
+                        <div class="admin-title">
+                            {{ p["name"] }}
+                        </div>
+
+                        <div class="admin-price">
+                            {{ p["price"] }} TL
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="/delete-product/{{ p['id'] }}"
+                        class="delete-btn"
+                    >
+                        Sil
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- SİPARİŞLER -->
+        <div class="admin-section">
+
+            <h3>Siparişler</h3>
+
+            {% for o in orders %}
+
+                <div class="admin-card">
+
+                    <div>
+
+                        Sipariş #{{ o["id"] }}
+
+                        <br>
+
+                        <span class="admin-price">
+                            {{ o["total"] }} TL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

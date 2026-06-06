@@ -1,0 +1,531 @@
+<!-- templates/try.html -->
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Sanal Deneme</title>
+
+    <!-- FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            font-family:'Poppins',sans-serif;
+
+            background:
+            linear-gradient(
+                135deg,
+                #0f0f0f,
+                #1b1027
+            );
+
+            min-height:100vh;
+
+            color:white;
+
+            display:flex;
+            justify-content:center;
+        }
+
+        .app{
+
+            width:100%;
+            max-width:430px;
+
+            min-height:100vh;
+
+            padding:20px;
+        }
+
+        .container{
+            width:100%;
+        }
+
+        /* HEADER */
+
+        .topbar{
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            margin-bottom:30px;
+        }
+
+        .back-btn{
+
+            width:45px;
+            height:45px;
+
+            border-radius:14px;
+
+            background:
+            rgba(255,255,255,0.08);
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            text-decoration:none;
+
+            color:white;
+
+            font-size:20px;
+
+            backdrop-filter:blur(10px);
+
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+
+            transform:translateY(-2px);
+        }
+
+        .topbar h3{
+
+            font-size:20px;
+            font-weight:600;
+        }
+
+        .settings-btn{
+
+            width:45px;
+            height:45px;
+
+            border:none;
+
+            border-radius:14px;
+
+            background:
+            rgba(255,255,255,0.08);
+
+            color:white;
+
+            font-size:18px;
+
+            cursor:pointer;
+
+            backdrop-filter:blur(10px);
+
+            transition:0.3s;
+        }
+
+        .settings-btn:hover{
+
+            transform:translateY(-2px);
+        }
+
+        /* TITLE */
+
+        .hero-title{
+
+            text-align:center;
+
+            font-size:38px;
+
+            font-weight:700;
+
+            margin-bottom:15px;
+
+            background:
+            linear-gradient(
+                45deg,
+                #ffffff,
+                #d4af37
+            );
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .hero-sub{
+
+            text-align:center;
+
+            color:#bbbbbb;
+
+            margin-bottom:35px;
+
+            line-height:1.8;
+
+            font-size:15px;
+        }
+
+        /* PREVIEW */
+
+        .preview{
+
+            position:relative;
+
+            text-align:center;
+
+            background:
+            rgba(255,255,255,0.05);
+
+            padding:30px;
+
+            border-radius:32px;
+
+            backdrop-filter:blur(18px);
+
+            border:
+            1px solid rgba(255,255,255,0.08);
+
+            box-shadow:
+            0 20px 50px rgba(0,0,0,0.35);
+
+            overflow:hidden;
+        }
+
+        .preview::before{
+
+            content:"";
+
+            position:absolute;
+
+            width:240px;
+            height:240px;
+
+            border-radius:50%;
+
+            background:
+            rgba(199,125,255,0.12);
+
+            top:-120px;
+            right:-100px;
+
+            filter:blur(25px);
+        }
+
+        /* AI BADGE */
+
+        .ai-badge{
+
+            position:absolute;
+
+            top:18px;
+            left:18px;
+
+            z-index:5;
+
+            padding:10px 16px;
+
+            border-radius:999px;
+
+            background:
+            linear-gradient(
+                45deg,
+                #7b2cbf,
+                #c77dff
+            );
+
+            color:white;
+
+            font-size:13px;
+            font-weight:600;
+
+            box-shadow:
+            0 0 20px rgba(199,125,255,0.35);
+        }
+
+        /* IMAGE */
+
+        .preview img{
+
+            position:relative;
+
+            z-index:2;
+
+            width:260px;
+
+            height:260px;
+
+            object-fit:contain;
+
+            background:#111111;
+
+            border-radius:28px;
+
+            padding:20px;
+
+            border:
+            2px solid rgba(255,255,255,0.06);
+        }
+
+        /* PRODUCT INFO */
+
+        .preview h2{
+
+            margin-top:25px;
+
+            color:white;
+
+            font-size:30px;
+
+            position:relative;
+            z-index:2;
+        }
+
+        .price{
+
+            margin-top:10px;
+
+            color:gold;
+
+            font-size:24px;
+
+            font-weight:700;
+
+            position:relative;
+            z-index:2;
+        }
+
+        /* FEATURES */
+
+        .ai-features{
+
+            display:grid;
+
+            grid-template-columns:
+            repeat(2,1fr);
+
+            gap:15px;
+
+            margin-top:35px;
+
+            position:relative;
+            z-index:2;
+        }
+
+        .feature{
+
+            background:
+            rgba(255,255,255,0.05);
+
+            padding:22px;
+
+            border-radius:22px;
+
+            text-align:center;
+
+            color:white;
+
+            border:
+            1px solid rgba(255,255,255,0.05);
+
+            transition:0.3s;
+
+            line-height:1.8;
+
+            font-size:14px;
+        }
+
+        .feature:hover{
+
+            transform:translateY(-4px);
+
+            box-shadow:
+            0 12px 30px rgba(199,125,255,0.18);
+        }
+
+        /* BUTTON */
+
+        .camera-btn{
+
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            gap:10px;
+
+            margin-top:35px;
+
+            width:100%;
+
+            padding:22px;
+
+            border-radius:24px;
+
+            text-align:center;
+
+            text-decoration:none;
+
+            font-size:18px;
+
+            font-weight:700;
+
+            background:
+            linear-gradient(
+                45deg,
+                #7b2cbf,
+                #c77dff
+            );
+
+            color:white;
+
+            transition:0.3s;
+
+            box-shadow:
+            0 15px 35px rgba(123,44,191,0.35);
+
+            position:relative;
+            z-index:2;
+        }
+
+        .camera-btn:hover{
+
+            transform:translateY(-3px);
+
+            box-shadow:
+            0 20px 40px rgba(199,125,255,0.35);
+        }
+
+        /* MOBILE */
+
+        @media(max-width:390px){
+
+            .hero-title{
+                font-size:30px;
+            }
+
+            .preview{
+                padding:22px;
+            }
+
+            .preview img{
+                width:220px;
+                height:220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="topbar">
+
+            <a href="/"
+               class="back-btn">
+                ←
+            </a>
+
+            <h3>Şimdi Dene</h3>
+
+            <button class="settings-btn">
+                ⚙
+            </button>
+
+        </div>
+
+        <!-- TITLE -->
+
+        <div class="hero-title">
+
+            AI Sanal Deneme ✨
+
+        </div>
+
+        <div class="hero-sub">
+
+            Yapay zeka ile ürünü gerçek zamanlı analiz ederek
+            üzerinde nasıl duracağını anında görüntüle.
+
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="preview">
+
+            <div class="ai-badge">
+                AI POWERED
+            </div>
+
+            <img
+                src="/static/uploads/{{ product['image'] }}"
+                alt="Ürün Görseli"
+            >
+
+            <h2>
+                {{ product["name"] }}
+            </h2>
+
+            <p class="price">
+                {{ product["price"] }} TL
+            </p>
+
+            <!-- AI FEATURES -->
+
+            <div class="ai-features">
+
+                <div class="feature">
+                    🤖<br><br>
+                    AI Pose Tracking
+                </div>
+
+                <div class="feature">
+                    📏<br><br>
+                    Body Analysis
+                </div>
+
+                <div class="feature">
+                    👕<br><br>
+                    Smart Overlay
+                </div>
+
+                <div class="feature">
+                    ⚡<br><br>
+                    Real-Time Fitting
+                </div>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <a
+                class="camera-btn"
+                href="/ai-camera"
+            >
+                📷 Kamerayı Başlat
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
