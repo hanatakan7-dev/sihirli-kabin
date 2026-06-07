@@ -648,22 +648,7 @@ def cheap_tryon():
 # MAKE ADMIN
 # --------------------------------------------------
 
-@app.route("/make-admin")
-def make_admin():
 
-    conn = get_db()
-
-    cursor = conn.cursor()
-
-    cursor.execute(
-        "UPDATE users SET is_admin=1 WHERE username='atakan'"
-    )
-
-    conn.commit()
-
-    conn.close()
-
-    return "Admin yapıldı"
 
 # --------------------------------------------------
 # RUN
